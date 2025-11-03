@@ -1,0 +1,128 @@
+<!-- header: red nav w search and menu working
+bg color: #dc4c3e
+text color: white
+quick find box: fnal text input field, placeholder text, no filtering fnality req
+use menu icon
+task counter: display "30/5" or similar count on right side
+
+left nav: sidebar w task categories and counts 
+main content: task list display area 
+font: roboto, base: 14px
+left nav width 300px 
+left nav disappears on viewports 480px or less 
+layout be floats, flexbox, or CSS grid DO FLEX
+use unordered lists for nav and task items -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task Manager</title>
+
+        <!-- roboto font used & external style sheet -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!-- Content goes here -->
+         <header class="site-header" role="banner">
+            <div class="header-container">
+                <!-- menu btn (no fnality req yet for a1) -->
+                <button class="menu-btn" aria-label="Menu">
+                    <img src="assets/menu_icon.png" width="24" height="24"  alt="menu"> <!-- copy pasted to fix to get 100 -->
+                </button>
+
+                <!-- quick find -->
+                <form class="quick-find" role="search" aria-label="Quick find">
+                    <img src="assets/search_icon.png" width="16" height="16" class="search-icon"  alt="search"/>
+                    <label for="q" class="sr-only">Quick find</label>
+                    <input id="q" name="q" type="text" placeholder="Quick find" />
+                </form>
+
+                <!-- task counter -->
+                <div class="task-counter">
+                    <img src="assets/check_icon.png" width="20" height="20" class="checkmark"  alt="checkmark"/>
+                    <span aria-label="Task counter">30/5</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- pg layout: sidebar & main -->
+        <div class="layout">
+        <!-- left nav add inbox icon -->
+         <nav class="sidebar" aria-label="Task categories">
+            <ul class="nav-list">
+                <li class="nav-item is-active">
+                    <a href="#">
+                        <img src="assets/inbox_icon.png" width="22" height="22"  alt="inbox"/>
+                        <span class="label">Inbox</span>
+                        <span class="count" aria-label="Inbox count">5</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                        <img src="assets/calendar_icon.png" width="22" height="22"  alt="calendar">
+                        <span class="label">Today</span>
+                        <span class="count" aria-label="Today count">5</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                        <img src="assets/upcoming_icon.png" width="22" height="22"  alt="upcoming">
+                        <span class="label">Upcoming</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- main tasks -->
+        <main class="content" id="main">
+            <section aria-labelledby="inbox-heading" class="task-section">
+                <h1 id="inbox-heading">Inbox</h1>
+
+ 
+                <ul class="task-list">
+                    <li class="task">
+                        <label class="task-row">
+                            <input type="checkbox" />
+                            <span class="custom-check" aria-hidden="true"></span>
+                            <span class="task-text">Call Mom</span>
+                        </label>
+                    </li>
+                    <li class="task">
+                        <label class="task-row">
+                            <input type="checkbox" />
+                            <span class="custom-check" aria-hidden="true"></span>
+                            <span class="task-text">Buy the new issue of Scientific American</span>
+                        </label>
+                    </li>
+                    <li class="task">
+                        <label class="task-row">
+                            <input type="checkbox" />
+                            <span class="custom-check" aria-hidden="true"></span>
+                            <span class="task-text">Return the textbook to Josie</span>
+                        </label>
+                    </li>
+                    <li class="task">
+                        <label class="task-row">
+                            <input type="checkbox" />
+                            <span class="custom-check" aria-hidden="true"></span>
+                            <span class="task-text">Buy the new album by Rake</span>
+                        </label>
+                    </li>
+                    <li class="task">
+                        <label class="task-row">
+                            <input type="checkbox" />
+                            <span class="custom-check" aria-hidden="true"></span>
+                            <span class="task-text">Buy a gift card for Dad</span>
+                        </label>
+                    </li>
+                </ul>
+            </section>
+        </main>
+        </div>
+
+</body>
+</html>
